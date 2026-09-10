@@ -88,21 +88,21 @@ FirePredict/
 ## Key Features
 
 ### Mobile App (Flutter/Android)
-- **Impact Dashboard** — fire statistics (2015–2025), lives & hectares at risk
-- **Real-Time Alerts** — zone-level alerts with predicted windows, risk drivers, recommended actions
-- **Interactive Risk Map** — colour-coded zones (Very Low → High) with tap-to-inspect
-- **Weather Dashboard** — temperature, humidity, wind, rainfall with fire risk indicators
-- **Community Fire Reporting** — GPS-tagged photo reports sent to forest managers
-- **Offline Mode** — app works without internet using cached data + built-in demo
+- **Impact Dashboard** - fire statistics (2015–2025), lives & hectares at risk
+- **Real-Time Alerts** - zone-level alerts with predicted windows, risk drivers, recommended actions
+- **Interactive Risk Map** - colour-coded zones (Very Low → High) with tap-to-inspect
+- **Weather Dashboard** - temperature, humidity, wind, rainfall with fire risk indicators
+- **Community Fire Reporting** - GPS-tagged photo reports sent to forest managers
+- **Offline Mode** - app works without internet using cached data + built-in demo
 
 ### Backend (FastAPI)
-- `/zones` — fire risk scores for all monitoring zones
-- `/alerts` — active fire risk alerts
-- `/predict` — custom scenario prediction with any input values
-- `/weather` — current meteorological conditions
-- `/trends` — 7-day risk trend chart data
-- `/report-fire` — receive community fire reports
-- `/health` — server health check
+- `/zones` - fire risk scores for all monitoring zones
+- `/alerts` - active fire risk alerts
+- `/predict` - custom scenario prediction with any input values
+- `/weather` - current meteorological conditions
+- `/trends` - 7-day risk trend chart data
+- `/report-fire` - receive community fire reports
+- `/health` - server health check
 
 ### Model (ConvLSTM)
 - **Architecture**: ConvLSTM2D with multi-branch inputs (satellite + weather + human activity)
