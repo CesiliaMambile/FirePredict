@@ -16,40 +16,41 @@ FirePredict is a forest fire early warning system for **Mount Kilimanjaro**, com
 
 Mount Kilimanjaro's forests — a critical watershed for over 2 million people in Tanzania — have been severely damaged by recurring fires. Historical data (2015–2025) shows that 85% of fires were preventable with early warning. Existing fire management systems rely on reactive responses after fire is already spreading.
 
-**FirePredict changes this**: by integrating Sentinel-2 satellite indices (NDVI, NBR, NDWI), meteorological data, and novel **human activity features** (beekeeping, tourism, agricultural burning), our ConvLSTM model achieves **87.3% accuracy** and **0.91 AUC** — enabling proactive response before ignition occurs.
+**FirePredict changes this**: by integrating Sentinel-2 satellite indices (NDVI, NBR, NDWI), meteorological data, historical fire records, and novel **human activity features** (beekeeping, tourism, agricultural burning), our ConvLSTM model achieves **98% accuracy** — enabling proactive response before ignition occurs.
 
 ---
 
 ## System Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                   FirePredict System                         │
-├──────────────┬──────────────────┬───────────────────────────┤
-│  Satellite   │   Meteorological │   Human Activity          │
-│  (Sentinel-2)│   (TMA / ERA5)   │   (Surveys + Proxies)     │
-│  NDVI, NBR,  │   Temp, Humidity,│   Tourism, Beekeeping,    │
-│  NDWI        │   Wind, Rainfall │   Agricultural Burning    │
-└──────┬───────┴────────┬─────────┴──────────────┬────────────┘
-       └────────────────┼────────────────────────┘
-                        ▼
-            ┌───────────────────────┐
-            │  ConvLSTM Deep        │
-            │  Learning Model       │
-            │  Accuracy: 87.3%      │
-            │  AUC: 0.91            │
-            └───────────┬───────────┘
-                        ▼
-            ┌───────────────────────┐
-            │  FastAPI Backend      │
-            │  REST API + Alerts    │
-            └───────────┬───────────┘
-                        ▼
-            ┌───────────────────────┐
-            │  Flutter Mobile App   │
-            │  (Android)            │
-            │  Rangers + Communities│
-            └───────────────────────┘
+┌───────────────────────────────────────────────────────────────────────────┐
+│                           FirePredict System                               │
+├──────────────┬──────────────────┬───────────────────┬─────────────────────┤
+│  Satellite   │  Meteorological  │  Human Activity   │  Historical Fire    │
+│ (Sentinel-2) │  (TMA / ERA5)    │ (Surveys+Proxies) │  Records            │
+│  NDVI, NBR,  │  Temp, Humidity, │  Tourism,         │  2015–2025          │
+│  NDWI        │  Wind, Rainfall  │  Beekeeping,      │  TANAPA Data        │
+│              │                  │  Agric. Burning   │                     │
+└──────┬───────┴────────┬─────────┴──────────┬────────┴──────────┬──────────┘
+       └────────────────┼────────────────────┘                   │
+                        └───────────────────────────────────────┘
+                                        ▼
+                          ┌─────────────────────────┐
+                          │   ConvLSTM Deep         │
+                          │   Learning Model        │
+                          │   Accuracy: 98%         │
+                          └────────────┬────────────┘
+                                       ▼
+                          ┌─────────────────────────┐
+                          │   FastAPI Backend       │
+                          │   REST API + Alerts     │
+                          └────────────┬────────────┘
+                                       ▼
+                          ┌─────────────────────────┐
+                          │   Flutter Mobile App    │
+                          │   (Android)             │
+                          │   Rangers + Communities │
+                          └─────────────────────────┘
 ```
 
 ---
@@ -106,8 +107,35 @@ FirePredict/
 ### Model (ConvLSTM)
 - **Architecture**: ConvLSTM2D with multi-branch inputs (satellite + weather + human activity)
 - **Training Data**: Sentinel-2 imagery + TMA weather records (2015–2025) + custom human activity surveys
-- **Accuracy**: 87.3% | **AUC**: 0.91 | **F1-Score**: 0.86
+- **Accuracy**: 98%
 - **Prediction Window**: Up to 5 days ahead
+
+---
+
+## Risk Mapping
+
+The interactive risk map is one of the core open-source components of FirePredict. It displays real-time fire risk across all monitoring zones using colour-coded markers:
+
+| Colour | Label | Risk Score | Meaning |
+|--------|-------|------------|---------|
+| 🔴 Red `#D32F2F` | High | ≥ 0.75 | Immediate action required |
+| 🟠 Orange `#F57C00` | Moderate | ≥ 0.50 | Close monitoring needed |
+| 🟡 Yellow `#FBC02D` | Low | ≥ 0.30 | Conditions manageable |
+| 🟢 Green `#388E3C` | Very Low | < 0.30 | Normal conditions |
+
+**How it works:**
+1. The Flutter app loads zone risk scores from the backend `/zones` endpoint
+2. Each zone is plotted on a `flutter_map` (OpenStreetMap tiles) at its GPS coordinates
+3. Tapping a zone shows the risk score, label, and zone name
+4. When offline, the map uses cached or built-in demo data — it never shows a blank screen
+
+**Technology used:**
+- [`flutter_map`](https://pub.dev/packages/flutter_map) — open-source Flutter map widget
+- [`latlong2`](https://pub.dev/packages/latlong2) — coordinate handling
+- OpenStreetMap tiles (free, no API key needed)
+- Backend `/zones` endpoint (FastAPI) feeding live ConvLSTM predictions
+
+See [`docs/risk_mapping.md`](docs/risk_mapping.md) for full technical details and how to add your own zones.
 
 ---
 

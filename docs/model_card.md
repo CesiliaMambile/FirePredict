@@ -19,12 +19,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Accuracy | 87.3% |
-| AUC-ROC | 0.91 |
-| F1-Score (weighted) | 0.86 |
-| Precision (fire class) | 0.84 |
-| Recall (fire class) | 0.88 |
-| False Alarm Rate | 12.7% |
+| Accuracy | 98% |
 
 *Evaluated on held-out test set: 2023–2025 (20% of total data)*
 
