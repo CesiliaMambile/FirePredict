@@ -8,7 +8,17 @@
 
 FirePredict is a forest fire early warning system for **Mount Kilimanjaro**, combining satellite remote sensing, deep learning (ConvLSTM), and human activity data to predict fire risk up to 5 days in advance. The system delivers real-time alerts to rangers, forest managers, and local communities via a mobile app.
 
-**Selected components of FirePredict are open source** - specifically the mobile app source code, the backend API server, and the documentation. The trained model weights and the raw training datasets (which include restricted data from TANAPA and TMA) are not included in this repository.
+## What's Included in This Repository
+
+| Component | Included | License |
+|-----------|----------|---------|
+| Mobile app source code (Flutter/Dart) | ✅ Yes | MIT |
+| Backend API server (FastAPI) | ✅ Yes | MIT |
+| Documentation & guides | ✅ Yes | MIT |
+| Trained model weights (`best_model.keras`) | ❌ No — too large; train your own using the notebooks | — |
+| Raw training data (NASA FIRMS fire records, TMA weather) | ❌ No — restricted datasets; not redistributable | — |
+
+**In short:** The code that makes FirePredict work is open source. The trained model and the original datasets are not included.
 
 ---
 
@@ -213,7 +223,7 @@ This system is based on PhD research at the **University of Dodoma (UDOM), Tanza
 | [Sentinel-2 (ESA Copernicus)](https://scihub.copernicus.eu) | NDVI, NBR, NDWI satellite indices | Open (CC BY-SA 3.0 IGO) |
 | [ERA5 Reanalysis (ECMWF)](https://cds.climate.copernicus.eu) | Historical weather data | Open (Copernicus License) |
 | Tanzania Met Authority (TMA) | Local meteorological station data | By permission |
-| TANAPA Fire Records (2015–2025) | Historical fire occurrence data | By permission |
+| [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) | Historical fire occurrence data (2015–2025) | Open (NASA Earthdata) |
 
 ---
 
@@ -226,9 +236,7 @@ This system is based on PhD research at the **University of Dodoma (UDOM), Tanza
 | Input modalities | Satellite (3 bands), Weather (6 vars), Human activity (7 vars) |
 | Training period | 2015–2025 (10 years) |
 | Study area | Mount Kilimanjaro, Tanzania (-3.07°N, 37.35°E) |
-| Accuracy | 87.3% |
-| AUC-ROC | 0.91 |
-| F1-Score | 0.86 |
+| Accuracy | 98% |
 | Framework | TensorFlow / Keras |
 
 ---

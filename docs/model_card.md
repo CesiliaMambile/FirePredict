@@ -70,7 +70,7 @@
 |--------|--------|---------|
 | Sentinel-2 imagery (Copernicus) | 2015–2025 | ~3,600 scenes |
 | TMA weather station records | 2015–2025 | 3,650 daily records |
-| TANAPA fire occurrence records | 2015–2025 | 127 confirmed fire events |
+| NASA FIRMS fire occurrence records | 2015–2025 | Historical fire detections |
 | Human activity surveys (UDOM) | 2022–2025 | Field surveys + proxy data |
 
 **Class distribution (training):** 73% no-fire, 27% fire (upsampled from 9% natural rate)

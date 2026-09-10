@@ -164,6 +164,6 @@ No paid API keys are required. Map tiles are served free by OpenStreetMap.
 
 ## Historical Fire Records on the Map
 
-Historical fire locations (2015–2025, from TANAPA records) are used during model training but are not plotted on the live map in the current version. A future enhancement could add a toggleable historical fire layer to help users see which zones have burned before.
+Historical fire locations (2015–2025, from NASA FIRMS) are used during model training but are not plotted on the live map in the current version. A future enhancement could add a toggleable historical fire layer to help users see which zones have burned before.
 
 To contribute this feature, see the [Contributing](../README.md#contributing) section.

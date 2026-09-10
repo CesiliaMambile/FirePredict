@@ -42,4 +42,4 @@ Input 3: Human (1,7)         — Zone type, access, tourism, elevation, season, 
 → Dense(1, sigmoid) → Fire Risk Score [0.0 – 1.0]
 ```
 
-Training Accuracy: **87.3%** | AUC: **0.91** | F1-Score: **0.86**
+Training Accuracy: **98%**
