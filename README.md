@@ -1,4 +1,4 @@
-# 🔥 FirePredict — AI-Powered Forest Fire Early Warning System
+# 🔥 FirePredict - AI-Powered Forest Fire Early Warning System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android-brightgreen.svg)](mobile/)
@@ -8,7 +8,7 @@
 
 FirePredict is a forest fire early warning system for **Mount Kilimanjaro**, combining satellite remote sensing, deep learning (ConvLSTM), and human activity data to predict fire risk up to 5 days in advance. The system delivers real-time alerts to rangers, forest managers, and local communities via a mobile app.
 
-**Selected components of FirePredict are open source** — specifically the mobile app source code, the backend API server, and the documentation. The trained model weights and the raw training datasets (which include restricted data from TANAPA and TMA) are not included in this repository.
+**Selected components of FirePredict are open source** - specifically the mobile app source code, the backend API server, and the documentation. The trained model weights and the raw training datasets (which include restricted data from TANAPA and TMA) are not included in this repository.
 
 ---
 
