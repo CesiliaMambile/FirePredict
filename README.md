@@ -69,6 +69,11 @@ Mount Kilimanjaro's forests-a critical watershed for over 2 million people in Ta
 
 ```
 FirePredict/
+├── risk_mapping_tools/  # ★ Standalone open-source risk mapping tools
+│   ├── generate_risk_map.py      # Python script → interactive HTML map
+│   ├── kilimanjaro_zones.geojson # GIS zone file (QGIS, Leaflet, Mapbox...)
+│   └── README.md
+│
 ├── mobile/              # Flutter/Dart Android app (v9.0.0)
 │   ├── lib/
 │   │   ├── main.dart
@@ -88,6 +93,7 @@ FirePredict/
 ├── docs/
 │   ├── adapt_for_your_region.md   # Guide: deploy for any forest/region
 │   ├── model_card.md              # Model details, training data, limitations
+│   ├── risk_mapping.md            # Risk map technical documentation
 │   └── api_reference.md           # REST API documentation
 │
 └── README.md
