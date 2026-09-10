@@ -4,12 +4,11 @@
 [![Platform: Android](https://img.shields.io/badge/Platform-Android-brightgreen.svg)](mobile/)
 [![Backend: FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688.svg)](backend/)
 [![Model: ConvLSTM](https://img.shields.io/badge/Model-ConvLSTM-FF6F00.svg)](notebooks/)
-[![UNFCCC Finalist](https://img.shields.io/badge/UNFCCC%20AI%20for%20Climate-Top%205%20Finalist%202026-blue.svg)](https://unfccc.int)
-
-> **Top 5 Finalist — UNFCCC AI for Climate Action Award 2026**
 > Developed at the **University of Dodoma (UDOM), Tanzania**
 
-FirePredict is an open-source forest fire early warning system for **Mount Kilimanjaro**, combining satellite remote sensing, deep learning (ConvLSTM), and human activity data to predict fire risk up to 5 days in advance. The system delivers real-time alerts to rangers, forest managers, and local communities via a mobile app.
+FirePredict is a forest fire early warning system for **Mount Kilimanjaro**, combining satellite remote sensing, deep learning (ConvLSTM), and human activity data to predict fire risk up to 5 days in advance. The system delivers real-time alerts to rangers, forest managers, and local communities via a mobile app.
+
+**Selected components of FirePredict are open source** — specifically the mobile app source code, the backend API server, and the documentation. The trained model weights and the raw training datasets (which include restricted data from TANAPA and TMA) are not included in this repository.
 
 ---
 
@@ -222,9 +221,9 @@ Please open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
+The open-source components in this repository are licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
 
-You are free to use, modify, and deploy FirePredict for any forest ecosystem globally. We ask that you cite the original research if used in academic work.
+You are free to use, modify, and deploy these components for any forest ecosystem globally. We ask that you cite the original research if used in academic work.
 
 ---
 
@@ -250,7 +249,6 @@ University of Dodoma (UDOM), Tanzania
 PhD Researcher — Forest Fire Early Warning Systems
 
 *FirePredict was developed as part of PhD research at UDOM.*
-*Selected as Top 5 Finalist — UNFCCC AI for Climate Action Award 2026.*
 
 ---
 
