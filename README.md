@@ -14,7 +14,7 @@ FirePredict is a forest fire early warning system for **Mount Kilimanjaro**, com
 
 ## Why This Matters
 
-Mount Kilimanjaro's forests — a critical watershed for over 2 million people in Tanzania — have been severely damaged by recurring fires. Historical data (2015–2025) shows that 85% of fires were preventable with early warning. Existing fire management systems rely on reactive responses after fire is already spreading.
+Mount Kilimanjaro's forests-a critical watershed for over 2 million people in Tanzania-have been severely damaged by recurring fires. Historical data (2015–2025) shows that 85% of fires were preventable with early warning. Existing fire management systems rely on reactive responses after fire is already spreading.
 
 **FirePredict changes this**: by integrating Sentinel-2 satellite indices (NDVI, NBR, NDWI), meteorological data, historical fire records, and novel **human activity features** (beekeeping, tourism, agricultural burning), our ConvLSTM model achieves **98% accuracy** — enabling proactive response before ignition occurs.
 
@@ -29,7 +29,7 @@ Mount Kilimanjaro's forests — a critical watershed for over 2 million people i
 │  Satellite   │  Meteorological  │  Human Activity   │  Historical Fire    │
 │ (Sentinel-2) │  (TMA / ERA5)    │ (Surveys+Proxies) │  Records            │
 │  NDVI, NBR,  │  Temp, Humidity, │  Tourism,         │  2015–2025          │
-│  NDWI        │  Wind, Rainfall  │  Beekeeping,      │  TANAPA Data        │
+│  NDWI        │  Wind, Rainfall  │  Beekeeping,      │  NASA FIRMS         │
 │              │                  │  Agric. Burning   │                     │
 └──────┬───────┴────────┬─────────┴──────────┬────────┴──────────┬──────────┘
        └────────────────┼────────────────────┘                   │
