@@ -16,7 +16,11 @@ backend/model/best_model.keras
 backend/model/*.h5
 backend/model/*.pb
 
-# Flutter / Dart
+# Flutter / Dart — source code is proprietary, not open source
+mobile/lib/
+mobile/android/
+mobile/ios/
+mobile/pubspec.yaml
 mobile/.dart_tool/
 mobile/.flutter-plugins
 mobile/.flutter-plugins-dependencies

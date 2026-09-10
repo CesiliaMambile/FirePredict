@@ -12,13 +12,15 @@ FirePredict is a forest fire early warning system for **Mount Kilimanjaro**, com
 
 | Component | Included | License |
 |-----------|----------|---------|
-| Mobile app source code (Flutter/Dart) | ✅ Yes | MIT |
+| Risk mapping tools (Python + GeoJSON) | ✅ Yes | MIT |
 | Backend API server (FastAPI) | ✅ Yes | MIT |
 | Documentation & guides | ✅ Yes | MIT |
-| Trained model weights (`best_model.keras`) | ❌ No — too large; train your own using the notebooks | — |
-| Raw training data (NASA FIRMS fire records, TMA weather) | ❌ No — restricted datasets; not redistributable | — |
+| Mobile app (compiled APK) | ✅ Yes — [download from Releases](../../releases) | Proprietary |
+| Mobile app source code (Flutter/Dart) | ❌ No — proprietary | — |
+| Trained model weights (`best_model.keras`) | ❌ No — request via contact below | — |
+| Raw training data (NASA FIRMS, TMA weather) | ❌ No — restricted datasets | — |
 
-**In short:** The code that makes FirePredict work is open source. The trained model and the original datasets are not included.
+**In short:** The risk mapping tools, backend API, and documentation are open source under MIT License. The mobile app source code and trained model are proprietary.
 
 ---
 
@@ -74,12 +76,8 @@ FirePredict/
 │   ├── kilimanjaro_zones.geojson # GIS zone file (QGIS, Leaflet, Mapbox...)
 │   └── README.md
 │
-├── mobile/              # Flutter/Dart Android app (v9.0.0)
-│   ├── lib/
-│   │   ├── main.dart
-│   │   ├── screens/     # Impact, Alerts, Map, Weather, Report...
-│   │   └── services/    # API service with offline caching
-│   └── pubspec.yaml
+├── mobile/              # Android app — compiled APK (source is proprietary)
+│   └── README.md        # Download link + installation instructions
 │
 ├── backend/             # FastAPI Python server
 │   ├── main.py          # All REST endpoints
