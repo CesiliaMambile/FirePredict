@@ -183,10 +183,10 @@ const String kBaseUrl = 'http://10.0.2.2:8080';
 
 FirePredict is designed to be portable. To deploy for **any forest ecosystem**:
 
-1. **Replace satellite data** — download Sentinel-2 tiles for your region via Google Earth Engine or Copernicus Hub
-2. **Update zone coordinates** — edit `ZONES` in `backend/main.py` with your monitoring zones
-3. **Retrain the model** — follow `notebooks/02_convlstm_training.ipynb` with your data
-4. **Update human activity features** — define relevant features for your region (land use, tourism, agricultural practices)
+1. **Replace satellite data** - download Sentinel-2 tiles for your region via Google Earth Engine or Copernicus Hub
+2. **Update zone coordinates** - edit `ZONES` in `backend/main.py` with your monitoring zones
+3. **Retrain the model** - follow `notebooks/02_convlstm_training.ipynb` with your data
+4. **Update human activity features** - define relevant features for your region (land use, tourism, agricultural practices)
 
 See [`docs/adapt_for_your_region.md`](docs/adapt_for_your_region.md) for the full step-by-step guide.
 
